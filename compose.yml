@@ -1,0 +1,15 @@
+---
+version: '3.1'
+
+networks:
+  django:
+
+services:
+  app:
+    image: django-app:0.1
+    ports:
+      - 8080:8000
+    volumes:
+      - $PWD/src/:/opt/apps/
+    networks:
+      - django
